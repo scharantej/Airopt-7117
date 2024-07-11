@@ -1,0 +1,40 @@
+---
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flight Prices</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<h1>Cheapest Flight Prices</h1>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Destination</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+{% for destination, price in prices.items() %}
+<tr>
+<td>{{ destination }}</td>
+<td>{{ price }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<form action="/refresh" method="post">
+<button type="submit" class="btn btn-primary">Refresh Prices</button>
+</form>
+</div>
+</body>
+</html>
+
+
+
+---
